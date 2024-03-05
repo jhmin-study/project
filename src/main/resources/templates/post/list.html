@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>게시물 목록</title>
@@ -19,25 +19,36 @@
         <th>제목</th>
         <th>작성자</th>
         <th>작성일시</th>
+        <th>조회수</th>
     </tr>
-    <tr>
+    <tr th:each="post : ${postList}">
+        <td th:text="${post.getId()}"/>
+        <td th:text="${post.getPostTitle()}"/>
+        <td th:text="${post.getMemberName()}"/>
+        <td th:text="${post.getMemberName()}"/>
+        <td th:text="${post.getViewCount()}"/>
+    </tr>
+    <!--<tr>
         <td>1</td>
         <td>테스트 제목 1</td>
         <td>이순신</td>
         <td>2024-02-29 08:00:00</td>
+        <td>1</td>
     </tr>
     <tr>
         <td>2</td>
         <td>테스트 제목 2</td>
         <td>강감찬</td>
         <td>2024-03-01 10:00:00</td>
+        <td>2</td>
     </tr>
     <tr>
         <td>3</td>
         <td>테스트 제목 3</td>
         <td>홍길동</td>
         <td>2024-03-02 13:05:00</td>
-    </tr>
+        <td>4</td>
+    </tr>-->
 </table>
 </body>
 </html>

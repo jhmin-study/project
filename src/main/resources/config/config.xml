@@ -4,4 +4,9 @@
     <settings>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
+
+    <typeAliases>
+        <typeAlias type="com.app.project.domain.PostVO" alias="post"/>
+        <typeAlias type="com.app.project.domain.PostDTO" alias="postDTO"/>
+    </typeAliases>
 </configuration>

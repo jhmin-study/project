@@ -1,10 +1,13 @@
 package com.app.project.mapper;
 
+import com.app.project.domain.PostDTO;
 import com.app.project.domain.PostVO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
 
 @SpringBootTest
 @Slf4j
@@ -30,6 +33,17 @@ public class PostMapperTests {
         postVO.setPostContent("테스트 본문1");
         postVO.setMemberId(1L); // 아이디 임의 입력
         postMapper.insert(postVO);
+    }
+
+    @Test
+    public void testSelectAllByPage() {
+        int page = 1;
+        int rowCount = 5;
+        int offset = (page - 1) * rowCount;
+
+        postMapper.selectAllByPage(offset, rowCount)
+                .stream().map(PostDTO::toString)
+                .forEach(log::info);
     }
 
 }
