@@ -22,4 +22,12 @@
         where id = #{id}
     </update>
 
+    <select id="selectAllByPage" resultType="postDTO">
+        select  m.member_email, m.member_name, p.id, p.post_title, p.post_content, p.view_count, p.created_date, p.updated_date
+        from tbl_member m join tbl_post p
+        on m.id = p.member_id and p.status = 1
+        order by p.id desc
+        limit #{offset}, #{rowCount}
+    </select>
+
 </mapper>
