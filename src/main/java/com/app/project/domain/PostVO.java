@@ -1,4 +1,19 @@
 package com.app.project.domain;
 
-public class PostVO {
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import org.springframework.stereotype.Component;
+
+@Component
+@Getter
+@Setter
+@ToString(callSuper = true)
+public class PostVO extends Period {
+    private Long id;
+    private String postTitle;
+    private String postContent;
+    private Boolean status;
+    private Long viewCount;
+    private Long memberId;
 }

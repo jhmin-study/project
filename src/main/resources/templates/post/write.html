@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOC제TYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WRITE</title>
 </head>
 <body>
+<form th:action="@{/post/write}" method="post" th:object="${postVO}">
+    <input type="text" th:field="*{postTitle}">
+    <input type="text" th:field="*{postContent}">
+    <input type="text" th:field="*{memberId}">
+    <button>완료</button>
+</form>
 
 </body>
 </html>
