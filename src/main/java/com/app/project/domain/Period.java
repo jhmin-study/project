@@ -5,8 +5,7 @@ import lombok.ToString;
 import org.springframework.stereotype.Component;
 
 @Component
-@Getter
-@ToString
+@Getter @ToString
 public class Period {
     private String createdDate;
     private String updatedDate;

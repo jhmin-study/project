@@ -45,5 +45,4 @@ public class PostMapperTests {
                 .stream().map(PostDTO::toString)
                 .forEach(log::info);
     }
-
 }
