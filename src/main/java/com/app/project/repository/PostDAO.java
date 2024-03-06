@@ -7,6 +7,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
@@ -19,4 +22,11 @@ public class PostDAO {
 
     public void increaseViewCount(Long id) {postMapper.updateViewCount(id);}
 
+    public void write(PostVO postVO){
+        postMapper.insert(postVO);
+    }
+
+    public List<PostDTO> list(int offset, int rowCount) {
+        return postMapper.selectAllByPage(offset, rowCount);
+    }
 }

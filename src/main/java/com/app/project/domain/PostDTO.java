@@ -6,8 +6,10 @@ import lombok.ToString;
 import org.springframework.stereotype.Component;
 
 @Component
-@Getter @Setter @ToString(callSuper = true)
-public class PostDTO extends Period{
+@Getter
+@Setter
+@ToString(callSuper = true)
+public class PostDTO extends Period {
     private Long id;
     private String postTitle;
     private String postContent;

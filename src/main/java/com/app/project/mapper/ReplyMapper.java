@@ -9,6 +9,4 @@ import java.util.Optional;
 public interface ReplyMapper {
     // 게시물에 댓글 달기
     public void insert (ReplyDTO replyDTO);
-
-    //
 }

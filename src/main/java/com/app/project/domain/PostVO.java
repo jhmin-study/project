@@ -7,11 +7,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Getter @Setter @ToString(callSuper = true)
-public class PostVO extends Period{
+public class PostVO extends Period {
     private Long id;
     private String postTitle;
     private String postContent;
     private Boolean status;
-    private Integer viewCount;
+    private Long viewCount;
     private Long memberId;
 }
