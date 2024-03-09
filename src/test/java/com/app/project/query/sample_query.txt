@@ -1,0 +1,67 @@
+-- 테이블 생성 쿼리(참고용)
+
+create table tbl_member(
+    id bigint auto_increment primary key,
+    member_email varchar(255) not null,
+    member_password varchar(255) not null,
+    member_name varchar(255) not null,
+    status tinyint default 1,
+    created_date datetime default current_timestamp,
+    updated_date datetime default current_timestamp
+);
+select * from tbl_member;
+
+
+create table tbl_post(
+    id bigint auto_increment primary key,
+    post_title varchar(255) not null,
+    post_content varchar(255) not null,
+    status tinyint default 1,
+    view_count bigint default 0,
+    member_id bigint not null,
+    created_date datetime default current_timestamp,
+    updated_date datetime default current_timestamp,
+    constraint fk_post_member foreign key(member_id)
+    references tbl_member(id)
+);
+select * from tbl_post;
+
+ 
+create table tbl_reply(
+    id bigint auto_increment primary key,
+    reply_content varchar(255) not null,
+    status tinyint default 1,
+    member_id bigint not null,
+    post_id bigint not null,
+    created_date datetime default current_timestamp,
+    updated_date datetime default current_timestamp,
+    constraint fk_reply_member foreign key(member_id)
+    references tbl_member(id),
+    constraint fk_reply_post foreign key(post_id)
+    references tbl_post(id)
+);
+select * from tbl_reply;
+
+-- 한글 데이터 깨짐 처리
+ALTER TABLE tbl_member convert to charset utf8;
+ALTER TABLE tbl_reply convert to charset utf8;
+ALTER TABLE tbl_post convert to charset utf8;
+
+
+-- sample data 입력 (tbl_member)
+insert into tbl_member(member_email, member_password, member_name)
+values('iss1234@gmail.com', '1234', '이순신');
+
+insert into tbl_member(member_email, member_password, member_name)
+values('hgd1111@gmail.com', '1111', '홍길동');
+
+insert into tbl_member(member_email, member_password, member_name)
+values('ajg2222@gmail.com', '2222', '안중근');
+
+insert into tbl_member(member_email, member_password, member_name)
+values('ygs3333@gmail.com', '3333', '유관순');
+
+
+
+
+

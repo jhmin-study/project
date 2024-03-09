@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.project.mapper.PostMapper">
-
     <insert id="insert">
         insert into tbl_post (post_title, post_content, member_id)
         values (#{postTitle}, #{postContent}, #{memberId})
@@ -21,5 +20,13 @@
         set view_count = view_count + 1
         where id = #{id}
     </update>
+
+    <select id="selectAllByPage" resultType="postDTO">
+        select  m.member_email, m.member_name, p.id, p.post_title, p.post_content, p.view_count, p.created_date, p.updated_date
+        from tbl_member m join tbl_post p
+        on m.id = p.member_id and p.status = 1
+        order by p.id desc
+        limit #{offset}, #{rowCount}
+    </select>
 
 </mapper>

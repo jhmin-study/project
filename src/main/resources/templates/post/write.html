@@ -1,4 +1,4 @@
-<!DOC제TYPE html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -9,9 +9,10 @@
 </head>
 <body>
 <form th:action="@{/post/write}" method="post" th:object="${postVO}">
-    <input type="text" th:field="*{postTitle}">
-    <input type="text" th:field="*{postContent}">
-    <input type="text" th:field="*{memberId}">
+    <input type="text" th:field="*{postTitle}" placeholder="제목">
+    <input type="text" th:field="*{postContent}" placeholder="본문">
+    <!-- 로그인후에 작성하도록 변경필요    -->
+    <input type="text" th:field="*{memberId}" placeholder="작성자">
     <button>완료</button>
 </form>
 

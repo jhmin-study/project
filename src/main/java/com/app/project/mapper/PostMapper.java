@@ -17,10 +17,7 @@ public interface PostMapper {
 
     // 게시글 조회수 증가
     public void updateViewCount(Long id);
-  
-    // 게시글 작성
-    public void insert(PostVO postVO);
-    
+
     // 게시물 목록
     public List<PostDTO> selectAllByPage(int offset, int rowCount);
 }

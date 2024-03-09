@@ -13,7 +13,7 @@ public class PostDTO extends Period {
     private Long id;
     private String postTitle;
     private String postContent;
-    private Integer viewCount;
+    private Long viewCount;
     private Long memberId;
     private String memberEmail;
     private String memberName;
