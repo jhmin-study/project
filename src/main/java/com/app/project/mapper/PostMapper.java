@@ -9,9 +9,6 @@ import java.util.Optional;
 
 @Mapper
 public interface PostMapper {
-    // 게시글 추가
-    public void insert(PostVO postVO);
-
     // 게시글 조회
     public Optional<PostDTO> selectById(Long id);
 

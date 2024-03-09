@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.project.mapper.ReplyMapper">
-
+<!--    <insert id="insert">-->
+<!--        insert into tbl_reply (reply_content, post_id, post_title, post_content, view_count)-->
+<!--        values (#{replyContent}, #{postId}, #{postTitle}, #{postContent}, #{viewCount})-->
+<!--        <selectKey>-->
+<!--            select id-->
+<!--        </selectKey>-->
+<!--    </insert>-->
 </mapper>

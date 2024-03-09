@@ -9,9 +9,9 @@
 </head>
 <body>
 <form th:action="@{/post/write}" method="post" th:object="${postVO}">
-    <input type="text" th:field="*{postTitle}">
-    <input type="text" th:field="*{postContent}">
-    <input type="text" th:field="*{memberId}">
+    <input type="text" th:field="*{post.getPostTitle()}">
+    <input type="text" th:field="*{post.getPostContent()}">
+    <input type="text" th:field="*{member.getMemberId()}">
     <button>완료</button>
 </form>
 
