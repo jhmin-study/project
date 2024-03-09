@@ -11,7 +11,7 @@
         insert into tbl_member (member_email, member_password, member_name)
         values (#{memberEmail}, #{memberPassword}, #{memberName})
     </insert>
-
+git
     <select id="selectByMemberEmailAndMemberPassword" resultType="memberVO">
         select id, member_email, member_password, member_name, status, created_date, updated_date
         from tbl_member
