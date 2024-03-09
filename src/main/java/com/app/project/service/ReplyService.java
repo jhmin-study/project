@@ -1,7 +1,7 @@
 package com.app.project.service;
 
-import com.app.project.domain.PostDTO;
+import com.app.project.domain.ReplyVO;
 
 public interface ReplyService {
-    public void update(PostDTO postDTO);
+    public void write(ReplyVO replyVO);
 }
