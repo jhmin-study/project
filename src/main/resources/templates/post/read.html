@@ -12,23 +12,23 @@
         <tbody>
         <tr>
             <th scope="row">글 번호</th>
-            <td th:text="*{id}"></td>
+            <td th:text="*{member.getid()}"></td>
         </tr>
         <tr>
             <th scope="row">작성자</th>
-            <td th:text="*{memberId}"></td>
+            <td th:text="*{member.getmemberId()}"></td>
             <th scope="row">작성일</th>
-            <td th:text="*{createDate}"></td>
+            <td th:text="*{period.getCreatedDate()}"></td>
         </tr>
         <tr>
             <th scope="row">제목</th>
             <td colspan="3">
-                <input type="text" th:field="*{postTitle}" placeholder="제목을 입력하세요">
+                <input type="text" th:field="*{post.getPostTitle()}" placeholder="제목을 입력하세요">
             </td>
         </tr>
         <tr>
             <td colspan="4" class="view-content">
-                <textarea th:field="*{postContent}" placeholder="내용을 입력하세요"></textarea>
+                <textarea th:field="*{post.getPostContent()}" placeholder="내용을 입력하세요"></textarea>
             </td>
         </tr>
         </tbody>

@@ -12,18 +12,15 @@
         font-size: 20px;
         margin: auto;
     }
-    .info {
-        padding: 5px;
-    }
 </style>
 <body>
 <div>
     <h3>회원가입</h3>
 </div>
 <form method="post" th:action="@{/member/join}" th:object="${memberVO}">
-    <input type="text" th:field="*{memberEmail}" placeholder="이메일을 입력하세요">
-    <input type="password" th:field="*{memberPassword}" placeholder="비밀번호를 입력하세요">
-    <input type="text" th:field="*{memberName}" placeholder="이름을 입력하세요">
+    <input type="text" th:field="*{member.memberEmail()}" placeholder="이메일을 입력하세요">
+    <input type="password" th:field="*{member.memberPassword()}" placeholder="비밀번호를 입력하세요">
+    <input type="text" th:field="*{member.memberName()}" placeholder="이름을 입력하세요">
     <button>회원가입하기</button>
 </form>
 </body>
