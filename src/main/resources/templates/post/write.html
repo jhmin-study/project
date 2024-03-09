@@ -9,10 +9,16 @@
 </head>
 <body>
 <form th:action="@{/post/write}" method="post" th:object="${postVO}">
+<<<<<<< HEAD
     <input type="text" th:field="*{postTitle}" placeholder="제목">
     <input type="text" th:field="*{postContent}" placeholder="본문">
     <!-- 로그인후에 작성하도록 변경필요    -->
     <input type="text" th:field="*{memberId}" placeholder="작성자">
+=======
+    <input type="text" th:field="*{post.getPostTitle()}">
+    <input type="text" th:field="*{post.getPostContent()}">
+    <input type="text" th:field="*{member.getMemberId()}">
+>>>>>>> member/join
     <button>완료</button>
 </form>
 

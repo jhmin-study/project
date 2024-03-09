@@ -12,5 +12,4 @@ public class ReplyVO extends Period{
     private String reply_Content;
     private Boolean status;
     private Long memberId;
-    private Long postId;
-}
+    private Long postId;}

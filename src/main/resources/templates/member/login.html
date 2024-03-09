@@ -16,8 +16,8 @@
 <body>
     <h3>로그인</h3>
     <form method="post" th:action="@{/member/login}" th:object="${memberVO}">
-        <div>이메일</div><input type="text" th:field="*{memberEmail}" placeholder="이메일을 입력하세요">
-        <div>비밀번호</div><input type="password" th:field="*{memberPassword}" placeholder="비밀번호를 입력하세요">
+        <div>이메일</div><input type="text" th:field="*{member.getMemberEmail()}" placeholder="이메일을 입력하세요">
+        <div>비밀번호</div><input type="password" th:field="*{member.getMemberPassword}" placeholder="비밀번호를 입력하세요">
         <button>로그인</button>
     </form>
 </body>

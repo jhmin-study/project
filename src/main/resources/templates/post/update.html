@@ -9,10 +9,10 @@
 <form method="post" th:action="@{/post/update}" th:object="${postVO}">
     <table class="table">
         <tr>
-            <input type="text" th:field="*{postTitle}" placeholder="게시글 제목을 입력하세요" required>
+            <input type="text" th:field="*{post.getPostTilte()}" placeholder="게시글 제목을 입력하세요" required>
         </tr>
         <tr>
-            <td><textarea rows="10" th:field="*{postContent}" placeholder="게시글 내용을 입력하세요" required></textarea></td>
+            <td><textarea rows="10" th:field="*{post.getPostContent()}" placeholder="게시글 내용을 입력하세요" required></textarea></td>
         </tr>
     </table>
     <div class="text-center">
